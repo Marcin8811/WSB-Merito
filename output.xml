@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-09-28T13:50:34.809862" rpa="false" schemaversion="5">
+<suite id="s1" name="Test05" source="/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/test05.robot">
+<test id="s1-t1" name="Test empik" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-28T13:50:34.901295" level="INFO">Opening browser 'Chrome' to base url 'https://www.empik.com/bestsellery'.</msg>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-28T13:50:34.901158" elapsed="4.335689"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-28T13:50:54.241599" level="INFO">Slept 15 seconds.</msg>
+<arg>15</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-28T13:50:39.238147" elapsed="15.006287"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-28T13:50:54.247552" elapsed="0.327605"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-28T13:50:54.594376" level="INFO">@{best} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.186")&gt; | &lt;selenium.webd...</msg>
+<var>@{best}</var>
+<arg>css=.ta-product-title</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-28T13:50:54.575432" elapsed="0.018985"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-28T13:50:54.594853" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.186")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.194")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.202")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.203")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.204")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.205")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.206")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.207")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.208")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.209")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.210")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.211")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.212")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.213")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.214")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.215")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.216")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.217")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.218")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.219")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.220")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.221")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.222")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.223")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.224")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.225")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.226")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.227")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.228")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.229")&gt;]</msg>
+<arg>${best}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-28T13:50:54.594628" elapsed="0.000297"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-28T13:51:09.597599" level="INFO">Slept 15 seconds.</msg>
+<arg>15</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-28T13:50:54.595153" elapsed="15.004553"/>
+</kw>
+<status status="PASS" start="2024-09-28T13:50:34.900631" elapsed="34.701066"/>
+</test>
+<status status="PASS" start="2024-09-28T13:50:34.810830" elapsed="34.793701"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test05">Test05</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
