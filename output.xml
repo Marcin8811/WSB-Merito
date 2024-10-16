@@ -1,55 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-09-28T13:50:34.809862" rpa="false" schemaversion="5">
-<suite id="s1" name="Test05" source="/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/test05.robot">
-<test id="s1-t1" name="Test empik" line="9">
+<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-10-16T16:07:12.436760" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Web" source="/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/test_web.robot">
+<test id="s1-t1" name="Test New Game Button" line="8">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-28T13:50:34.901295" level="INFO">Opening browser 'Chrome' to base url 'https://www.empik.com/bestsellery'.</msg>
+<msg time="2024-10-16T16:07:12.527555" level="INFO">Opening browser 'Chrome' to base url 'file:///Users/marcin8kozik/Downloads/webTicTacToe-master/index.html'.</msg>
 <arg>${url}</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-28T13:50:34.901158" elapsed="4.335689"/>
+<status status="PASS" start="2024-10-16T16:07:12.527428" elapsed="1.681662"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-28T13:50:54.241599" level="INFO">Slept 15 seconds.</msg>
-<arg>15</arg>
+<msg time="2024-10-16T16:07:19.210540" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-28T13:50:39.238147" elapsed="15.006287"/>
+<status status="PASS" start="2024-10-16T16:07:14.209576" elapsed="5.001660"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-28T13:50:54.247552" elapsed="0.327605"/>
+<status status="PASS" start="2024-10-16T16:07:19.212272" elapsed="0.320383"/>
 </kw>
-<kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2024-09-28T13:50:54.594376" level="INFO">@{best} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.186")&gt; | &lt;selenium.webd...</msg>
-<var>@{best}</var>
-<arg>css=.ta-product-title</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2024-09-28T13:50:54.575432" elapsed="0.018985"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:19.533999" level="INFO">Clicking element 'id:new-game'.</msg>
+<arg>id:new-game</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T16:07:19.532973" elapsed="0.043847"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-09-28T13:50:54.594853" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.186")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.194")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.202")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.203")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.204")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.205")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.206")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.207")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.208")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.209")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.210")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.211")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.212")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.213")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.214")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.215")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.216")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.217")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.218")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.219")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.220")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.221")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.222")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.223")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.224")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.225")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.226")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.227")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.228")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3fc8e5e90925d0812f581f8bb448fd57", element="f.F538EA4ED1D1D161162532E0BC494630.d.0C2C0B072F80D77ADA3AB2AD1B771E70.e.229")&gt;]</msg>
-<arg>${best}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-28T13:50:54.594628" elapsed="0.000297"/>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:19.724333" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screen_1."&gt;&lt;img src="screen_1." width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-16T16:07:19.724392" level="INFO">/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:829: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  return self.get_screenshot_as_file(filename)</msg>
+<arg>screen_1.</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-16T16:07:19.577033" elapsed="0.147398"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-28T13:51:09.597599" level="INFO">Slept 15 seconds.</msg>
-<arg>15</arg>
+<msg time="2024-10-16T16:07:21.726591" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-28T13:50:54.595153" elapsed="15.004553"/>
+<status status="PASS" start="2024-10-16T16:07:19.724542" elapsed="2.002557"/>
 </kw>
-<status status="PASS" start="2024-09-28T13:50:34.900631" elapsed="34.701066"/>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-16T16:07:21.727944" elapsed="0.088390"/>
+</kw>
+<doc>Test otwiera aplikacje webowa i klika przecisk New Game</doc>
+<status status="PASS" start="2024-10-16T16:07:12.526947" elapsed="9.289557"/>
 </test>
-<status status="PASS" start="2024-09-28T13:50:34.810830" elapsed="34.793701"/>
+<test id="s1-t2" name="Test Click Cell and Verify" line="18">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:21.817325" level="INFO">Opening browser 'Chrome' to base url 'file:///Users/marcin8kozik/Downloads/webTicTacToe-master/index.html'.</msg>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-16T16:07:21.817176" elapsed="1.109677"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-16T16:07:27.928341" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-16T16:07:22.927435" elapsed="5.001348"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-16T16:07:27.929700" elapsed="0.317756"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:28.248365" level="INFO">Clicking element 'id:new-game'.</msg>
+<arg>id:new-game</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T16:07:28.247972" elapsed="0.032176"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-16T16:07:30.283019" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-16T16:07:28.280348" elapsed="2.003131"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:30.285051" level="INFO">Clicking element 'xpath=//*[@id="game-board"]/div[2]/div[2]'.</msg>
+<arg>xpath=//*[@id="game-board"]/div[2]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T16:07:30.284253" elapsed="0.048253"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-16T16:07:31.333386" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-16T16:07:30.332814" elapsed="1.000927"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:31.480866" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screen_2.png"&gt;&lt;img src="screen_2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screen_2.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-16T16:07:31.334492" elapsed="0.146432"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-16T16:07:33.482987" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-16T16:07:31.481044" elapsed="2.002362"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:33.512784" level="INFO">${cell_text} = X</msg>
+<var>${cell_text}</var>
+<arg>xpath=//*[@id="game-board"]/div[2]/div[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T16:07:33.484385" elapsed="0.028450"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-16T16:07:33.513352" level="INFO">X</msg>
+<arg>${cell_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-16T16:07:33.513143" elapsed="0.000257"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${cell_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-16T16:07:33.513521" elapsed="0.000144"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${cell_text}</arg>
+<arg>X</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-16T16:07:33.513774" elapsed="0.000145"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-16T16:07:34.514409" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-16T16:07:33.514022" elapsed="1.000812"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:34.516367" level="INFO">Clicking element 'xpath=//*[@id="game-board"]/div[2]/div[2]'.</msg>
+<arg>xpath=//*[@id="game-board"]/div[2]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T16:07:34.515623" elapsed="0.037230"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-16T16:07:35.555511" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-16T16:07:34.553084" elapsed="1.002913"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:35.557229" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-10-16T16:07:35.556743" elapsed="0.009778"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-16T16:07:36.568411" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-16T16:07:35.567120" elapsed="1.001407"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T16:07:36.580438" level="INFO">${cell_text} = X</msg>
+<var>${cell_text}</var>
+<arg>xpath=//*[@id="game-board"]/div[2]/div[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T16:07:36.568862" elapsed="0.011606"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${cell_text}</arg>
+<arg>X</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-16T16:07:36.580639" elapsed="0.000154"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-16T16:07:36.580896" elapsed="0.075513"/>
+</kw>
+<doc>Test otwiera noną grę i klika w pole</doc>
+<status status="PASS" start="2024-10-16T16:07:21.816930" elapsed="14.839627"/>
+</test>
+<status status="PASS" start="2024-10-16T16:07:12.437554" elapsed="24.219342"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test05">Test05</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Test Web">Test Web</stat>
 </suite>
 </statistics>
 <errors>
