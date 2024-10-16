@@ -1,188 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-10-16T16:07:12.436760" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Web" source="/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/test_web.robot">
-<test id="s1-t1" name="Test New Game Button" line="8">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:12.527555" level="INFO">Opening browser 'Chrome' to base url 'file:///Users/marcin8kozik/Downloads/webTicTacToe-master/index.html'.</msg>
-<arg>${url}</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-16T16:07:12.527428" elapsed="1.681662"/>
+<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-10-16T19:15:37.331910" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Api" source="/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/test_api.robot">
+<test id="s1-t1" name="Test create new game" line="9">
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-10-16T19:15:37.414497" level="INFO">POST Request : url=http://127.0.0.1:5000/game 
+ path_url=/game 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-10-16T19:15:37.414562" level="INFO">POST Response : url=http://127.0.0.1:5000/game 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Wed, 16 Oct 2024 17:15:37 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
+ body={
+  "game_id": 44,
+  "message": "New game created"
+}
+ 
+ </msg>
+<msg time="2024-10-16T19:15:37.414629" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>${url}/game</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-10-16T19:15:37.404389" elapsed="0.010252"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:19.210540" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:14.209576" elapsed="5.001660"/>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-10-16T19:15:37.415017" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-10-16T19:15:37.414764" elapsed="0.000283"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-10-16T16:07:19.212272" elapsed="0.320383"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:19.533999" level="INFO">Clicking element 'id:new-game'.</msg>
-<arg>id:new-game</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-16T16:07:19.532973" elapsed="0.043847"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:19.724333" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screen_1."&gt;&lt;img src="screen_1." width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-10-16T16:07:19.724392" level="INFO">/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:829: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
-  return self.get_screenshot_as_file(filename)</msg>
-<arg>screen_1.</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-10-16T16:07:19.577033" elapsed="0.147398"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:21.726591" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:19.724542" elapsed="2.002557"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-16T16:07:21.727944" elapsed="0.088390"/>
-</kw>
-<doc>Test otwiera aplikacje webowa i klika przecisk New Game</doc>
-<status status="PASS" start="2024-10-16T16:07:12.526947" elapsed="9.289557"/>
-</test>
-<test id="s1-t2" name="Test Click Cell and Verify" line="18">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:21.817325" level="INFO">Opening browser 'Chrome' to base url 'file:///Users/marcin8kozik/Downloads/webTicTacToe-master/index.html'.</msg>
-<arg>${url}</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-16T16:07:21.817176" elapsed="1.109677"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:27.928341" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:22.927435" elapsed="5.001348"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-10-16T16:07:27.929700" elapsed="0.317756"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:28.248365" level="INFO">Clicking element 'id:new-game'.</msg>
-<arg>id:new-game</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-16T16:07:28.247972" elapsed="0.032176"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:30.283019" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:28.280348" elapsed="2.003131"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:30.285051" level="INFO">Clicking element 'xpath=//*[@id="game-board"]/div[2]/div[2]'.</msg>
-<arg>xpath=//*[@id="game-board"]/div[2]/div[2]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-16T16:07:30.284253" elapsed="0.048253"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:31.333386" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:30.332814" elapsed="1.000927"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:31.480866" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screen_2.png"&gt;&lt;img src="screen_2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>screen_2.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-10-16T16:07:31.334492" elapsed="0.146432"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:33.482987" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:31.481044" elapsed="2.002362"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:33.512784" level="INFO">${cell_text} = X</msg>
-<var>${cell_text}</var>
-<arg>xpath=//*[@id="game-board"]/div[2]/div[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-16T16:07:33.484385" elapsed="0.028450"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-16T19:15:37.415298" level="INFO">${json_data} = {'game_id': 44, 'message': 'New game created'}</msg>
+<var>${json_data}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-16T19:15:37.415111" elapsed="0.000196"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-16T16:07:33.513352" level="INFO">X</msg>
-<arg>${cell_text}</arg>
+<msg time="2024-10-16T19:15:37.415510" level="INFO">New game created</msg>
+<arg>${json_data["message"]}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-16T16:07:33.513143" elapsed="0.000257"/>
+<status status="PASS" start="2024-10-16T19:15:37.415360" elapsed="0.000164"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${cell_text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-16T16:07:33.513521" elapsed="0.000144"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${cell_text}</arg>
-<arg>X</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-16T16:07:33.513774" elapsed="0.000145"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:34.514409" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:33.514022" elapsed="1.000812"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:34.516367" level="INFO">Clicking element 'xpath=//*[@id="game-board"]/div[2]/div[2]'.</msg>
-<arg>xpath=//*[@id="game-board"]/div[2]/div[2]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-16T16:07:34.515623" elapsed="0.037230"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:35.555511" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:34.553084" elapsed="1.002913"/>
-</kw>
-<kw name="Alert Should Be Present" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:35.557229" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<doc>Verifies that an alert is present and by default, accepts it.</doc>
-<status status="PASS" start="2024-10-16T16:07:35.556743" elapsed="0.009778"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-16T16:07:36.568411" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-16T16:07:35.567120" elapsed="1.001407"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-16T16:07:36.580438" level="INFO">${cell_text} = X</msg>
-<var>${cell_text}</var>
-<arg>xpath=//*[@id="game-board"]/div[2]/div[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-16T16:07:36.568862" elapsed="0.011606"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${cell_text}</arg>
-<arg>X</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-16T16:07:36.580639" elapsed="0.000154"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-16T16:07:36.580896" elapsed="0.075513"/>
-</kw>
-<doc>Test otwiera noną grę i klika w pole</doc>
-<status status="PASS" start="2024-10-16T16:07:21.816930" elapsed="14.839627"/>
+<doc>Test tworzenia nowej gry</doc>
+<status status="PASS" start="2024-10-16T19:15:37.404038" elapsed="0.011541"/>
 </test>
-<status status="PASS" start="2024-10-16T16:07:12.437554" elapsed="24.219342"/>
+<status status="PASS" start="2024-10-16T19:15:37.332777" elapsed="0.082961"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Test Web">Test Web</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Api">Test Api</stat>
 </suite>
 </statistics>
 <errors>
