@@ -11,4 +11,4 @@ Test create new game
     ${response}    POST    ${url}/game
     should be equal as numbers    ${response.status_code}    201
     ${json_data}    set variable    ${response.json()}
-    log    ${json_data["message"]}
+    log    ${json_data["message"]} New game created

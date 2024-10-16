@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-10-16T19:15:37.331910" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-10-16T19:27:08.892066" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Api" source="/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/test_api.robot">
 <test id="s1-t1" name="Test create new game" line="9">
 <kw name="POST" owner="RequestsLibrary">
-<msg time="2024-10-16T19:15:37.414497" level="INFO">POST Request : url=http://127.0.0.1:5000/game 
+<msg time="2024-10-16T19:27:08.963726" level="INFO">POST Request : url=http://127.0.0.1:5000/game 
  path_url=/game 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2024-10-16T19:15:37.414562" level="INFO">POST Response : url=http://127.0.0.1:5000/game 
+<msg time="2024-10-16T19:27:08.963792" level="INFO">POST Response : url=http://127.0.0.1:5000/game 
  status=201, reason=CREATED 
- headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Wed, 16 Oct 2024 17:15:37 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Wed, 16 Oct 2024 17:27:08 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
  body={
-  "game_id": 44,
+  "game_id": 47,
   "message": "New game created"
 }
  
  </msg>
-<msg time="2024-10-16T19:15:37.414629" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2024-10-16T19:27:08.963858" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${url}/game</arg>
 <doc>Sends a POST request.</doc>
-<status status="PASS" start="2024-10-16T19:15:37.404389" elapsed="0.010252"/>
+<status status="PASS" start="2024-10-16T19:27:08.955050" elapsed="0.008821"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-10-16T19:15:37.415017" level="INFO">Argument types are:
+<msg time="2024-10-16T19:27:08.964230" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-10-16T19:15:37.414764" elapsed="0.000283"/>
+<status status="PASS" start="2024-10-16T19:27:08.963985" elapsed="0.000274"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-16T19:15:37.415298" level="INFO">${json_data} = {'game_id': 44, 'message': 'New game created'}</msg>
+<msg time="2024-10-16T19:27:08.964507" level="INFO">${json_data} = {'game_id': 47, 'message': 'New game created'}</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-16T19:15:37.415111" elapsed="0.000196"/>
+<status status="PASS" start="2024-10-16T19:27:08.964321" elapsed="0.000195"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-16T19:15:37.415510" level="INFO">New game created</msg>
-<arg>${json_data["message"]}</arg>
+<msg time="2024-10-16T19:27:08.964734" level="INFO">New game created New game created</msg>
+<arg>${json_data["message"]} New game created</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-16T19:15:37.415360" elapsed="0.000164"/>
+<status status="PASS" start="2024-10-16T19:27:08.964572" elapsed="0.000178"/>
 </kw>
 <doc>Test tworzenia nowej gry</doc>
-<status status="PASS" start="2024-10-16T19:15:37.404038" elapsed="0.011541"/>
+<status status="PASS" start="2024-10-16T19:27:08.954685" elapsed="0.010123"/>
 </test>
-<status status="PASS" start="2024-10-16T19:15:37.332777" elapsed="0.082961"/>
+<status status="PASS" start="2024-10-16T19:27:08.892849" elapsed="0.072146"/>
 </suite>
 <statistics>
 <total>
