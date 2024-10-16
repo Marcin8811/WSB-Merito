@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26966c2b-5ba4-4b60-98a9-7feac4370dd0" name="Changes" comment="Test New Game">
-      <change afterPath="$PROJECT_DIR$/screen_1." afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_web.robot" beforeDir="false" afterPath="$PROJECT_DIR$/test_web.robot" afterDir="false" />
-    </list>
+    <list default="true" id="26966c2b-5ba4-4b60-98a9-7feac4370dd0" name="Changes" comment="Test New Game" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
