@@ -41,13 +41,22 @@ Make Invalid Move
     log    ${status}
     log    ${response}
     should be equal    ${status}    FAIL
-#    should be equal as integers    ${response.status_code}  400
-#    ${json_data}    set variable    ${response.json()}
-#    log    ${json_data}
     ${response}    GET    ${url}/game/${game_id}
     should be equal as integers    ${response.status_code}  200
     ${json_data}    set variable    ${response.json()}
     log    ${json_data}
     should be equal    ${json_data["moves"]}    3X
+
+#Made Second Move
+#    [Documentation]    Test wykonania drugiego ruchu
+#    ${body}    create dictionary    cellIndex=7
+#    ${response}    POST    ${url}/game/${game_id}/move    json=${body}
+#    should be equal as integers    ${response.status_code}  200
+#    ${json_data}    set variable    ${response.json()}
+#    log    ${json_data}
+#    should be equal    ${json_data["game_id"]}    ${game_id}
+#    should be equal    ${json_data["message"]}    Move made
+#    should be equal    ${json_data["moves"]}    3X7O
+
 
 

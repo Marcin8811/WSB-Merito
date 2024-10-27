@@ -1,312 +1,386 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-10-18T12:27:14.812214" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.1 on darwin)" generated="2024-10-18T14:44:31.495723" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Api" source="/Users/marcin8kozik/PycharmProjects/AutomativePython/robot_28_10_2024/test_api.robot">
 <test id="s1-t1" name="Test create new game" line="9">
 <kw name="POST" owner="RequestsLibrary">
-<msg time="2024-10-18T12:27:14.904357" level="INFO">POST Request : url=http://127.0.0.1:5000/game 
+<msg time="2024-10-18T14:44:31.575745" level="INFO">POST Request : url=http://127.0.0.1:5000/game 
  path_url=/game 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2024-10-18T12:27:14.904424" level="INFO">POST Response : url=http://127.0.0.1:5000/game 
+<msg time="2024-10-18T14:44:31.575824" level="INFO">POST Response : url=http://127.0.0.1:5000/game 
  status=201, reason=CREATED 
- headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 10:27:14 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 12:44:31 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
  body={
-  "game_id": 69,
+  "game_id": 73,
   "message": "New game created"
 }
  
  </msg>
-<msg time="2024-10-18T12:27:14.904492" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2024-10-18T14:44:31.575897" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${url}/game</arg>
 <doc>Sends a POST request.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.891573" elapsed="0.012931"/>
+<status status="PASS" start="2024-10-18T14:44:31.563931" elapsed="0.011979"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.905062" level="INFO">Argument types are:
+<msg time="2024-10-18T14:44:31.576321" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.904808" elapsed="0.000280"/>
+<status status="PASS" start="2024-10-18T14:44:31.576050" elapsed="0.000302"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.905343" level="INFO">${json_data} = {'game_id': 69, 'message': 'New game created'}</msg>
+<msg time="2024-10-18T14:44:31.576625" level="INFO">${json_data} = {'game_id': 73, 'message': 'New game created'}</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.905152" elapsed="0.000200"/>
+<status status="PASS" start="2024-10-18T14:44:31.576420" elapsed="0.000215"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json_data["message"]}</arg>
 <arg>New game created</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.905405" elapsed="0.000170"/>
+<status status="PASS" start="2024-10-18T14:44:31.576691" elapsed="0.000175"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.905816" level="INFO">${game_id} = 69</msg>
+<msg time="2024-10-18T14:44:31.577114" level="INFO">${game_id} = 73</msg>
 <arg>${game_id}</arg>
 <arg>${json_data["game_id"]}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.905633" elapsed="0.000198"/>
+<status status="PASS" start="2024-10-18T14:44:31.576927" elapsed="0.000202"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.905925" level="INFO">69</msg>
+<msg time="2024-10-18T14:44:31.577231" level="INFO">73</msg>
 <arg>${game_id}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.905881" elapsed="0.000058"/>
+<status status="PASS" start="2024-10-18T14:44:31.577180" elapsed="0.000064"/>
 </kw>
 <doc>Test tworzenia nowej gry</doc>
-<status status="PASS" start="2024-10-18T12:27:14.891194" elapsed="0.014797"/>
+<status status="PASS" start="2024-10-18T14:44:31.563574" elapsed="0.013727"/>
 </test>
 <test id="s1-t2" name="Get Game Status" line="18">
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2024-10-18T12:27:14.908086" level="INFO">GET Request : url=http://127.0.0.1:5000/game/69 
- path_url=/game/69 
+<msg time="2024-10-18T14:44:31.580148" level="INFO">GET Request : url=http://127.0.0.1:5000/game/73 
+ path_url=/game/73 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-10-18T12:27:14.908117" level="INFO">GET Response : url=http://127.0.0.1:5000/game/69 
+<msg time="2024-10-18T14:44:31.580181" level="INFO">GET Response : url=http://127.0.0.1:5000/game/73 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 10:27:14 GMT', 'Content-Type': 'application/json', 'Content-Length': '35', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 12:44:31 GMT', 'Content-Type': 'application/json', 'Content-Length': '35', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
  body={
-  "game_id": 69,
+  "game_id": 73,
   "moves": ""
 }
  
  </msg>
-<msg time="2024-10-18T12:27:14.908162" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-10-18T14:44:31.580228" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${url}/game/${game_id}</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.906199" elapsed="0.001972"/>
+<status status="PASS" start="2024-10-18T14:44:31.577514" elapsed="0.002723"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.908427" level="INFO">Argument types are:
+<msg time="2024-10-18T14:44:31.580500" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.908241" elapsed="0.000208"/>
+<status status="PASS" start="2024-10-18T14:44:31.580311" elapsed="0.000210"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.908674" level="INFO">${json_data} = {'game_id': 69, 'moves': ''}</msg>
+<msg time="2024-10-18T14:44:31.580735" level="INFO">${json_data} = {'game_id': 73, 'moves': ''}</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.908503" elapsed="0.000180"/>
+<status status="PASS" start="2024-10-18T14:44:31.580569" elapsed="0.000175"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.908779" level="INFO">{'game_id': 69, 'moves': ''}</msg>
+<msg time="2024-10-18T14:44:31.580838" level="INFO">{'game_id': 73, 'moves': ''}</msg>
 <arg>${json_data}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.908731" elapsed="0.000064"/>
+<status status="PASS" start="2024-10-18T14:44:31.580790" elapsed="0.000063"/>
 </kw>
 <kw name="Should Be Empty" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.908983" level="INFO">Length is 0.</msg>
+<msg time="2024-10-18T14:44:31.581037" level="INFO">Length is 0.</msg>
 <arg>${json_data["moves"]}</arg>
 <doc>Verifies that the given item is empty.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.908836" elapsed="0.000161"/>
+<status status="PASS" start="2024-10-18T14:44:31.580893" elapsed="0.000158"/>
 </kw>
 <doc>Test pobierania stanu gry</doc>
-<status status="PASS" start="2024-10-18T12:27:14.906075" elapsed="0.002969"/>
+<status status="PASS" start="2024-10-18T14:44:31.577390" elapsed="0.003708"/>
 </test>
 <test id="s1-t3" name="Make First Move" line="26">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.909329" level="INFO">${body} = {'cellIndex': '3'}</msg>
+<msg time="2024-10-18T14:44:31.581405" level="INFO">${body} = {'cellIndex': '3'}</msg>
 <var>${body}</var>
 <arg>cellIndex=3</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.909224" elapsed="0.000114"/>
+<status status="PASS" start="2024-10-18T14:44:31.581287" elapsed="0.000126"/>
 </kw>
 <kw name="POST" owner="RequestsLibrary">
-<msg time="2024-10-18T12:27:14.912827" level="INFO">POST Request : url=http://127.0.0.1:5000/game/69/move 
- path_url=/game/69/move 
+<msg time="2024-10-18T14:44:31.584050" level="INFO">POST Request : url=http://127.0.0.1:5000/game/73/move 
+ path_url=/game/73/move 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '18', 'Content-Type': 'application/json'} 
  body=b'{"cellIndex": "3"}' 
  </msg>
-<msg time="2024-10-18T12:27:14.912857" level="INFO">POST Response : url=http://127.0.0.1:5000/game/69/move 
+<msg time="2024-10-18T14:44:31.584080" level="INFO">POST Response : url=http://127.0.0.1:5000/game/73/move 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 10:27:14 GMT', 'Content-Type': 'application/json', 'Content-Length': '63', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 12:44:31 GMT', 'Content-Type': 'application/json', 'Content-Length': '63', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
  body={
-  "game_id": 69,
+  "game_id": 73,
   "message": "Move made",
   "moves": "3X"
 }
  
  </msg>
-<msg time="2024-10-18T12:27:14.912904" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-10-18T14:44:31.584126" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${url}/game/${game_id}/move</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.909385" elapsed="0.003528"/>
+<status status="PASS" start="2024-10-18T14:44:31.581457" elapsed="0.002679"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.913214" level="INFO">Argument types are:
+<msg time="2024-10-18T14:44:31.584404" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.912997" elapsed="0.000240"/>
+<status status="PASS" start="2024-10-18T14:44:31.584209" elapsed="0.000216"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.913476" level="INFO">${json_data} = {'game_id': 69, 'message': 'Move made', 'moves': '3X'}</msg>
+<msg time="2024-10-18T14:44:31.584647" level="INFO">${json_data} = {'game_id': 73, 'message': 'Move made', 'moves': '3X'}</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.913294" elapsed="0.000192"/>
+<status status="PASS" start="2024-10-18T14:44:31.584477" elapsed="0.000180"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.913579" level="INFO">{'game_id': 69, 'message': 'Move made', 'moves': '3X'}</msg>
+<msg time="2024-10-18T14:44:31.584747" level="INFO">{'game_id': 73, 'message': 'Move made', 'moves': '3X'}</msg>
 <arg>${json_data}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.913536" elapsed="0.000058"/>
+<status status="PASS" start="2024-10-18T14:44:31.584705" elapsed="0.000057"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json_data["game_id"]}</arg>
 <arg>${game_id}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.913638" elapsed="0.000178"/>
+<status status="PASS" start="2024-10-18T14:44:31.584805" elapsed="0.000171"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json_data["message"]}</arg>
 <arg>Move made</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.913937" elapsed="0.000296"/>
+<status status="PASS" start="2024-10-18T14:44:31.585049" elapsed="0.000256"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json_data["moves"]}</arg>
 <arg>3X</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.914287" elapsed="0.000183"/>
+<status status="PASS" start="2024-10-18T14:44:31.585354" elapsed="0.000161"/>
 </kw>
 <doc>Test wykonania pierwszego ruchu</doc>
-<status status="PASS" start="2024-10-18T12:27:14.909114" elapsed="0.005411"/>
+<status status="PASS" start="2024-10-18T14:44:31.581171" elapsed="0.004391"/>
 </test>
 <test id="s1-t4" name="Make Invalid Move" line="37">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.914811" level="INFO">${body} = {'cellIndex': '3'}</msg>
+<msg time="2024-10-18T14:44:31.585808" level="INFO">${body} = {'cellIndex': '3'}</msg>
 <var>${body}</var>
 <arg>cellIndex=3</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.914735" elapsed="0.000085"/>
+<status status="PASS" start="2024-10-18T14:44:31.585742" elapsed="0.000075"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="POST" owner="RequestsLibrary">
-<msg time="2024-10-18T12:27:14.917568" level="INFO">POST Request : url=http://127.0.0.1:5000/game/69/move 
- path_url=/game/69/move 
+<msg time="2024-10-18T14:44:31.587387" level="INFO">POST Request : url=http://127.0.0.1:5000/game/73/move 
+ path_url=/game/73/move 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '18', 'Content-Type': 'application/json'} 
  body=b'{"cellIndex": "3"}' 
  </msg>
-<msg time="2024-10-18T12:27:14.917597" level="INFO">POST Response : url=http://127.0.0.1:5000/game/69/move 
+<msg time="2024-10-18T14:44:31.587412" level="INFO">POST Response : url=http://127.0.0.1:5000/game/73/move 
  status=400, reason=BAD REQUEST 
- headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 10:27:14 GMT', 'Content-Type': 'application/json', 'Content-Length': '44', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 12:44:31 GMT', 'Content-Type': 'application/json', 'Content-Length': '44', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
  body={
   "message": "Cell is already occupied"
 }
  
  </msg>
-<msg time="2024-10-18T12:27:14.917665" level="FAIL">HTTPError: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/game/69/move</msg>
+<msg time="2024-10-18T14:44:31.587476" level="FAIL">HTTPError: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/game/73/move</msg>
 <arg>${url}/game/${game_id}/move</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<status status="FAIL" start="2024-10-18T12:27:14.914921" elapsed="0.004510">HTTPError: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/game/69/move</status>
+<status status="FAIL" start="2024-10-18T14:44:31.585910" elapsed="0.002862">HTTPError: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/game/73/move</status>
 </kw>
-<msg time="2024-10-18T12:27:14.919498" level="INFO">${status} = FAIL</msg>
-<msg time="2024-10-18T12:27:14.919512" level="INFO">${response} = HTTPError: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/game/69/move</msg>
+<msg time="2024-10-18T14:44:31.588832" level="INFO">${status} = FAIL</msg>
+<msg time="2024-10-18T14:44:31.588848" level="INFO">${response} = HTTPError: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/game/73/move</msg>
 <var>${status}</var>
 <var>${response}</var>
 <arg>POST</arg>
 <arg>${url}/game/${game_id}/move</arg>
 <arg>json=${body}</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.914869" elapsed="0.004652"/>
+<status status="PASS" start="2024-10-18T14:44:31.585862" elapsed="0.002995"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.919664" level="INFO">FAIL</msg>
+<msg time="2024-10-18T14:44:31.588985" level="INFO">FAIL</msg>
 <arg>${status}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.919603" elapsed="0.000077"/>
+<status status="PASS" start="2024-10-18T14:44:31.588927" elapsed="0.000075"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.919761" level="INFO">HTTPError: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/game/69/move</msg>
+<msg time="2024-10-18T14:44:31.589097" level="INFO">HTTPError: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/game/73/move</msg>
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.919724" elapsed="0.000050"/>
+<status status="PASS" start="2024-10-18T14:44:31.589052" elapsed="0.000060"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${status}</arg>
 <arg>FAIL</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.919816" elapsed="0.000055"/>
+<status status="PASS" start="2024-10-18T14:44:31.589158" elapsed="0.000059"/>
 </kw>
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2024-10-18T12:27:14.921856" level="INFO">GET Request : url=http://127.0.0.1:5000/game/69 
- path_url=/game/69 
+<msg time="2024-10-18T14:44:31.590898" level="INFO">GET Request : url=http://127.0.0.1:5000/game/73 
+ path_url=/game/73 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-10-18T12:27:14.921879" level="INFO">GET Response : url=http://127.0.0.1:5000/game/69 
+<msg time="2024-10-18T14:44:31.590923" level="INFO">GET Response : url=http://127.0.0.1:5000/game/73 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 10:27:14 GMT', 'Content-Type': 'application/json', 'Content-Length': '37', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 12:44:31 GMT', 'Content-Type': 'application/json', 'Content-Length': '37', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
  body={
-  "game_id": 69,
+  "game_id": 73,
   "moves": "3X"
 }
  
  </msg>
-<msg time="2024-10-18T12:27:14.921915" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-10-18T14:44:31.590962" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${url}/game/${game_id}</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.919916" elapsed="0.002007"/>
+<status status="PASS" start="2024-10-18T14:44:31.589265" elapsed="0.001706"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.922175" level="INFO">Argument types are:
+<msg time="2024-10-18T14:44:31.591231" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.921978" elapsed="0.000217"/>
+<status status="PASS" start="2024-10-18T14:44:31.591032" elapsed="0.000220"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.922413" level="INFO">${json_data} = {'game_id': 69, 'moves': '3X'}</msg>
+<msg time="2024-10-18T14:44:31.591479" level="INFO">${json_data} = {'game_id': 73, 'moves': '3X'}</msg>
 <var>${json_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.922242" elapsed="0.000179"/>
+<status status="PASS" start="2024-10-18T14:44:31.591302" elapsed="0.000186"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-18T12:27:14.922505" level="INFO">{'game_id': 69, 'moves': '3X'}</msg>
+<msg time="2024-10-18T14:44:31.591577" level="INFO">{'game_id': 73, 'moves': '3X'}</msg>
 <arg>${json_data}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.922466" elapsed="0.000052"/>
+<status status="PASS" start="2024-10-18T14:44:31.591536" elapsed="0.000055"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json_data["moves"]}</arg>
 <arg>3X</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-18T12:27:14.922569" elapsed="0.000167"/>
+<status status="PASS" start="2024-10-18T14:44:31.591643" elapsed="0.000170"/>
 </kw>
 <doc>Test wykonania ruchu na to samo pole</doc>
-<status status="PASS" start="2024-10-18T12:27:14.914603" elapsed="0.008182"/>
+<status status="PASS" start="2024-10-18T14:44:31.585629" elapsed="0.006235"/>
 </test>
-<status status="PASS" start="2024-10-18T12:27:14.813079" elapsed="0.109870"/>
+<test id="s1-t5" name="Made Second Move" line="53">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-18T14:44:31.592179" level="INFO">${body} = {'cellIndex': '7'}</msg>
+<var>${body}</var>
+<arg>cellIndex=7</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-18T14:44:31.592101" elapsed="0.000088"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-10-18T14:44:31.594668" level="INFO">POST Request : url=http://127.0.0.1:5000/game/73/move 
+ path_url=/game/73/move 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '18', 'Content-Type': 'application/json'} 
+ body=b'{"cellIndex": "7"}' 
+ </msg>
+<msg time="2024-10-18T14:44:31.594702" level="INFO">POST Response : url=http://127.0.0.1:5000/game/73/move 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.4 Python/3.12.1', 'Date': 'Fri, 18 Oct 2024 12:44:31 GMT', 'Content-Type': 'application/json', 'Content-Length': '65', 'Access-Control-Allow-Origin': '*', 'Connection': 'close'} 
+ body={
+  "game_id": 73,
+  "message": "Move made",
+  "moves": "3X7O"
+}
+ 
+ </msg>
+<msg time="2024-10-18T14:44:31.594752" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${url}/game/${game_id}/move</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-10-18T14:44:31.592240" elapsed="0.002522"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-10-18T14:44:31.595037" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-10-18T14:44:31.594836" elapsed="0.000223"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-18T14:44:31.595291" level="INFO">${json_data} = {'game_id': 73, 'message': 'Move made', 'moves': '3X7O'}</msg>
+<var>${json_data}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-18T14:44:31.595117" elapsed="0.000210"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-18T14:44:31.595424" level="INFO">{'game_id': 73, 'message': 'Move made', 'moves': '3X7O'}</msg>
+<arg>${json_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-18T14:44:31.595379" elapsed="0.000195"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json_data["game_id"]}</arg>
+<arg>${game_id}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-18T14:44:31.595624" elapsed="0.000181"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json_data["message"]}</arg>
+<arg>Move made</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-18T14:44:31.595853" elapsed="0.000155"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json_data["moves"]}</arg>
+<arg>3X7O</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-18T14:44:31.596051" elapsed="0.000150"/>
+</kw>
+<doc>Test wykonania drugiego ruchu</doc>
+<status status="PASS" start="2024-10-18T14:44:31.591935" elapsed="0.004313"/>
+</test>
+<status status="PASS" start="2024-10-18T14:44:31.497828" elapsed="0.098584"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="Test Api">Test Api</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Test Api">Test Api</stat>
 </suite>
 </statistics>
 <errors>
